@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A548278D10EBD337FA6E055 /* Pods_MavelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B159974D17E26BF01FE328EA /* Pods_MavelApp.framework */; };
+		BC4B45331CCD3DBB00912FDA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B452F1CCD3DBB00912FDA /* Alamofire.framework */; };
+		BC4B45341CCD3DBB00912FDA /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B45301CCD3DBB00912FDA /* Argo.framework */; };
+		BC4B45351CCD3DBB00912FDA /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B45311CCD3DBB00912FDA /* Curry.framework */; };
+		BC4B45361CCD3DBB00912FDA /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B45321CCD3DBB00912FDA /* Nuke.framework */; };
+		BC6538E21CCD3615002791ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538E11CCD3615002791ED /* AppDelegate.swift */; };
+		BC6538E71CCD3615002791ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6538E51CCD3615002791ED /* Main.storyboard */; };
+		BC6538E91CCD3615002791ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6538E81CCD3615002791ED /* Assets.xcassets */; };
+		BC6538EC1CCD3615002791ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6538EA1CCD3615002791ED /* LaunchScreen.storyboard */; };
+		BC6538F71CCD3615002791ED /* MavelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6538F61CCD3615002791ED /* MavelAppTests.swift */; };
+		BC6539021CCD3616002791ED /* MavelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6539011CCD3616002791ED /* MavelAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC6538F31CCD3615002791ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6538D61CCD3615002791ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6538DD1CCD3615002791ED;
+			remoteInfo = MavelApp;
+		};
+		BC6538FE1CCD3616002791ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6538D61CCD3615002791ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6538DD1CCD3615002791ED;
+			remoteInfo = MavelApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C45885AC865723F255ACA6C /* Pods-MavelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MavelApp/Pods-MavelApp.release.xcconfig"; sourceTree = "<group>"; };
+		69122C2AE63388136CA5D351 /* Pods-MavelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MavelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MavelApp/Pods-MavelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B159974D17E26BF01FE328EA /* Pods_MavelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MavelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4B452F1CCD3DBB00912FDA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BC4B45301CCD3DBB00912FDA /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
+		BC4B45311CCD3DBB00912FDA /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
+		BC4B45321CCD3DBB00912FDA /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		BC6538DE1CCD3615002791ED /* MavelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MavelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6538E11CCD3615002791ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC6538E61CCD3615002791ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC6538E81CCD3615002791ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
+		BC6538EB1CCD3615002791ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC6538ED1CCD3615002791ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
+		BC6538F21CCD3615002791ED /* MavelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MavelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6538F61CCD3615002791ED /* MavelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MavelAppTests.swift; sourceTree = "<group>"; };
+		BC6538F81CCD3615002791ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6538FD1CCD3616002791ED /* MavelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MavelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6539011CCD3616002791ED /* MavelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MavelAppUITests.swift; sourceTree = "<group>"; };
+		BC6539031CCD3616002791ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC6538DB1CCD3615002791ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4B45331CCD3DBB00912FDA /* Alamofire.framework in Frameworks */,
+				BC4B45341CCD3DBB00912FDA /* Argo.framework in Frameworks */,
+				BC4B45351CCD3DBB00912FDA /* Curry.framework in Frameworks */,
+				BC4B45361CCD3DBB00912FDA /* Nuke.framework in Frameworks */,
+				9A548278D10EBD337FA6E055 /* Pods_MavelApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538EF1CCD3615002791ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538FA1CCD3616002791ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08524A21C893CAD2F9C63741 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69122C2AE63388136CA5D351 /* Pods-MavelApp.debug.xcconfig */,
+				3C45885AC865723F255ACA6C /* Pods-MavelApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC4B45371CCD3DDC00912FDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC4B453A1CCD3E2B00912FDA /* plist */,
+				BC4B45391CCD3E0500912FDA /* Assets */,
+				BC4B45381CCD3DE600912FDA /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BC4B45381CCD3DE600912FDA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538E51CCD3615002791ED /* Main.storyboard */,
+				BC6538EA1CCD3615002791ED /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BC4B45391CCD3E0500912FDA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538E81CCD3615002791ED /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BC4B453A1CCD3E2B00912FDA /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538ED1CCD3615002791ED /* Info.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		BC4B453B1CCD3E8800912FDA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Coordinator;
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BC4B453C1CCD3E9200912FDA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BC4B453D1CCD3E9A00912FDA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BC4B453E1CCD3EA200912FDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC4B453F1CCD3EAA00912FDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC4B45401CCD3EAF00912FDA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC4B45411CCD3EB700912FDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC4B45421CCD3EF600912FDA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BC6538D51CCD3615002791ED = {
+			isa = PBXGroup;
+			children = (
+				BC6538E01CCD3615002791ED /* MavelApp */,
+				BC6538F51CCD3615002791ED /* MavelAppTests */,
+				BC6539001CCD3616002791ED /* MavelAppUITests */,
+				BC6538DF1CCD3615002791ED /* Products */,
+				08524A21C893CAD2F9C63741 /* Pods */,
+				E9581DB373BA0BD9D8F6A8A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC6538DF1CCD3615002791ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538DE1CCD3615002791ED /* MavelApp.app */,
+				BC6538F21CCD3615002791ED /* MavelAppTests.xctest */,
+				BC6538FD1CCD3616002791ED /* MavelAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC6538E01CCD3615002791ED /* MavelApp */ = {
+			isa = PBXGroup;
+			children = (
+				BC4B453C1CCD3E9200912FDA /* Extension */,
+				BC4B453D1CCD3E9A00912FDA /* Protocol */,
+				BC4B45421CCD3EF600912FDA /* Networking */,
+				BC4B453B1CCD3E8800912FDA /* Coordinator */,
+				BC4B45411CCD3EB700912FDA /* View */,
+				BC4B45401CCD3EAF00912FDA /* ViewController */,
+				BC4B453F1CCD3EAA00912FDA /* Model */,
+				BC4B453E1CCD3EA200912FDA /* ViewModel */,
+				BC4B45371CCD3DDC00912FDA /* Resources */,
+				BC6538E11CCD3615002791ED /* AppDelegate.swift */,
+			);
+			path = MavelApp;
+			sourceTree = "<group>";
+		};
+		BC6538F51CCD3615002791ED /* MavelAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6538F61CCD3615002791ED /* MavelAppTests.swift */,
+				BC6538F81CCD3615002791ED /* Info.plist */,
+			);
+			path = MavelAppTests;
+			sourceTree = "<group>";
+		};
+		BC6539001CCD3616002791ED /* MavelAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6539011CCD3616002791ED /* MavelAppUITests.swift */,
+				BC6539031CCD3616002791ED /* Info.plist */,
+			);
+			path = MavelAppUITests;
+			sourceTree = "<group>";
+		};
+		E9581DB373BA0BD9D8F6A8A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC4B452F1CCD3DBB00912FDA /* Alamofire.framework */,
+				BC4B45301CCD3DBB00912FDA /* Argo.framework */,
+				BC4B45311CCD3DBB00912FDA /* Curry.framework */,
+				BC4B45321CCD3DBB00912FDA /* Nuke.framework */,
+				B159974D17E26BF01FE328EA /* Pods_MavelApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC6538DD1CCD3615002791ED /* MavelApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6539061CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelApp" */;
+			buildPhases = (
+				FB38648406A3CC0F7424E80E /* Check Pods Manifest.lock */,
+				BC6538DA1CCD3615002791ED /* Sources */,
+				BC6538DB1CCD3615002791ED /* Frameworks */,
+				BC6538DC1CCD3615002791ED /* Resources */,
+				009053E9BE60956DC4AA6E41 /* Embed Pods Frameworks */,
+				59217E85A92D2A7C2BF909A1 /* Copy Pods Resources */,
+				BC4B452E1CCD3D6300912FDA /* Carthage Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MavelApp;
+			productName = MavelApp;
+			productReference = BC6538DE1CCD3615002791ED /* MavelApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC6538F11CCD3615002791ED /* MavelAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6539091CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelAppTests" */;
+			buildPhases = (
+				BC6538EE1CCD3615002791ED /* Sources */,
+				BC6538EF1CCD3615002791ED /* Frameworks */,
+				BC6538F01CCD3615002791ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC6538F41CCD3615002791ED /* PBXTargetDependency */,
+			);
+			name = MavelAppTests;
+			productName = MavelAppTests;
+			productReference = BC6538F21CCD3615002791ED /* MavelAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC6538FC1CCD3616002791ED /* MavelAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC65390C1CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelAppUITests" */;
+			buildPhases = (
+				BC6538F91CCD3616002791ED /* Sources */,
+				BC6538FA1CCD3616002791ED /* Frameworks */,
+				BC6538FB1CCD3616002791ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC6538FF1CCD3616002791ED /* PBXTargetDependency */,
+			);
+			name = MavelAppUITests;
+			productName = MavelAppUITests;
+			productReference = BC6538FD1CCD3616002791ED /* MavelAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC6538D61CCD3615002791ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Henrique Gouveia";
+				TargetAttributes = {
+					BC6538DD1CCD3615002791ED = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					BC6538F11CCD3615002791ED = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = BC6538DD1CCD3615002791ED;
+					};
+					BC6538FC1CCD3616002791ED = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = BC6538DD1CCD3615002791ED;
+					};
+				};
+			};
+			buildConfigurationList = BC6538D91CCD3615002791ED /* Build configuration list for PBXProject "MavelApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC6538D51CCD3615002791ED;
+			productRefGroup = BC6538DF1CCD3615002791ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC6538DD1CCD3615002791ED /* MavelApp */,
+				BC6538F11CCD3615002791ED /* MavelAppTests */,
+				BC6538FC1CCD3616002791ED /* MavelAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC6538DC1CCD3615002791ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6538EC1CCD3615002791ED /* LaunchScreen.storyboard in Resources */,
+				BC6538E91CCD3615002791ED /* Assets.xcassets in Resources */,
+				BC6538E71CCD3615002791ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538F01CCD3615002791ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538FB1CCD3616002791ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		009053E9BE60956DC4AA6E41 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MavelApp/Pods-MavelApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59217E85A92D2A7C2BF909A1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MavelApp/Pods-MavelApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC4B452E1CCD3D6300912FDA /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
+				"$(SRCROOT)/$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+			);
+			name = "Carthage Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/run copy-frameworks";
+		};
+		FB38648406A3CC0F7424E80E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC6538DA1CCD3615002791ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6538E21CCD3615002791ED /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538EE1CCD3615002791ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6538F71CCD3615002791ED /* MavelAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6538F91CCD3616002791ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6539021CCD3616002791ED /* MavelAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC6538F41CCD3615002791ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC6538DD1CCD3615002791ED /* MavelApp */;
+			targetProxy = BC6538F31CCD3615002791ED /* PBXContainerItemProxy */;
+		};
+		BC6538FF1CCD3616002791ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC6538DD1CCD3615002791ED /* MavelApp */;
+			targetProxy = BC6538FE1CCD3616002791ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC6538E51CCD3615002791ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6538E61CCD3615002791ED /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BC6538EA1CCD3615002791ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6538EB1CCD3615002791ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC6539041CCD3616002791ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC6539051CCD3616002791ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC6539071CCD3616002791ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69122C2AE63388136CA5D351 /* Pods-MavelApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = MavelApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC6539081CCD3616002791ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C45885AC865723F255ACA6C /* Pods-MavelApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = MavelApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BC65390A1CCD3616002791ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MavelAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavelApp.app/MavelApp";
+			};
+			name = Debug;
+		};
+		BC65390B1CCD3616002791ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MavelAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MavelApp.app/MavelApp";
+			};
+			name = Release;
+		};
+		BC65390D1CCD3616002791ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MavelAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MavelApp;
+			};
+			name = Debug;
+		};
+		BC65390E1CCD3616002791ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MavelAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.henrique.gouveia.MavelAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MavelApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC6538D91CCD3615002791ED /* Build configuration list for PBXProject "MavelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6539041CCD3616002791ED /* Debug */,
+				BC6539051CCD3616002791ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6539061CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6539071CCD3616002791ED /* Debug */,
+				BC6539081CCD3616002791ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6539091CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC65390A1CCD3616002791ED /* Debug */,
+				BC65390B1CCD3616002791ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC65390C1CCD3616002791ED /* Build configuration list for PBXNativeTarget "MavelAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC65390D1CCD3616002791ED /* Debug */,
+				BC65390E1CCD3616002791ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC6538D61CCD3615002791ED /* Project object */;
+}
