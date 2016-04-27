@@ -66,8 +66,12 @@ struct Storyboards {
             return self.storyboard.instantiateViewController(type)
         }
 
-        static func instantiateCharactersViewController() -> CharactersViewController {
-            return self.storyboard.instantiateViewControllerWithIdentifier("CharactersViewController") as! CharactersViewController
+        static func instantiateMainViewController() -> MainViewController {
+            return self.storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        }
+
+        static func instantiateCharactersTableViewController() -> CharactersTableViewController {
+            return self.storyboard.instantiateViewControllerWithIdentifier("CharactersTableViewController") as! CharactersTableViewController
         }
     }
 }
@@ -230,9 +234,41 @@ extension UITableView {
 }
 
 
-//MARK: - CharactersViewController
-extension CharactersViewController: IdentifiableProtocol { 
-    var storyboardIdentifier: String? { return "CharactersViewController" }
-    static var storyboardIdentifier: String? { return "CharactersViewController" }
+//MARK: - MainViewController
+extension MainViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "MainViewController" }
+    static var storyboardIdentifier: String? { return "MainViewController" }
+}
+
+
+//MARK: - CharactersTableViewController
+extension CharactersTableViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "CharactersTableViewController" }
+    static var storyboardIdentifier: String? { return "CharactersTableViewController" }
+}
+
+extension CharactersTableViewController { 
+
+    enum Reusable: String, CustomStringConvertible, ReusableViewProtocol {
+        case CharacterTableViewCell_ = "CharacterTableViewCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case CharacterTableViewCell_:
+                return ReusableKind(rawValue: "tableViewCell")
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case CharacterTableViewCell_:
+                return CharacterTableViewCell.self
+            }
+        }
+
+        var storyboardIdentifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
 }
 
