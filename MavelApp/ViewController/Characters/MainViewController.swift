@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class CharactersViewController: UIViewController {
-    override func viewDidLoad() {
-
+class MainViewController: UIViewController {
+    private let client: CharactersClientType = CharactersClient()
+    
+    override func viewDidAppear(animated: Bool) {
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

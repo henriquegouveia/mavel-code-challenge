@@ -20,6 +20,20 @@
                ReferencedContainer = "container:MavelApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC6538F11CCD3615002791ED"
+               BuildableName = "MavelAppTests.xctest"
+               BlueprintName = "MavelAppTests"
+               ReferencedContainer = "container:MavelApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
