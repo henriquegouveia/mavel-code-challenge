@@ -7,30 +7,40 @@
 //
 
 import XCTest
+import Nimble
+import Alamofire
+import OHHTTPStubs
+import Argo
 @testable import MavelApp
 
 class MavelAppTests: XCTestCase {
     
     override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        stubFlirtList()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+        OHHTTPStubs.removeAllStubs()
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+        var result: Result<CharactersCollection, MarvelAPIClientError>!
+        let client = CharactersClient()
+        client.listCharacters { charactersCollection in
+            result = charactersCollection
         }
     }
+}
+
+private extension MavelAppTests {
+    func stubFlirtList() {
+        stubRequest(methodCondition: isMethodGET(), fixtureFile: "characters.json")
+    }
     
+    func stubRequest(methodCondition isMethod: OHHTTPStubsTestBlock, fixtureFile: String) {
+        stub(pathStartsWith("/characters") && isMethod) { _ in
+            let fixturePath = OHPathForFile(fixtureFile, self.dynamicType)
+            return fixture(fixturePath!, headers: ["Content-Type":"application/json"])
+        }
+    }
 }
