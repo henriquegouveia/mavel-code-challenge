@@ -1,6 +1,5 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '9.0'
-# Uncomment this line if you're using Swift
 use_frameworks!
 
 target 'MavelApp' do
@@ -12,9 +11,11 @@ end
 
 target 'MavelAppTests' do
 
+pod 'OHHTTPStubs'
+pod 'OHHTTPStubs/Swift'
+
 end
 
 target 'MavelAppUITests' do
 
 end
-

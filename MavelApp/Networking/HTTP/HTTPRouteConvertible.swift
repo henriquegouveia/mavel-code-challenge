@@ -18,7 +18,7 @@ extension HTTPRouteConvertible {
         #if APP_STORE
             return "https://..."
         #else
-            return "https://developer.marvel.com/"
+            return "http://gateway.marvel.com/v1/public"
         #endif
 
     }
@@ -31,6 +31,8 @@ extension HTTPRouteConvertible {
         let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(route.path))
         URLRequest.HTTPMethod = route.method.rawValue
         
-        return route.encoding.encode(URLRequest, parameters: route.params).0
+        let result = route.encoding.encode(URLRequest, parameters: route.params).0
+        
+        return result
     }
 }
