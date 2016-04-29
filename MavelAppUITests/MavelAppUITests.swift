@@ -1,3 +1,4 @@
+XCUIApplication().scrollViews.otherElements.containingType(.Button, identifier:"icn nav back white").element.swipeUp()
 //
 //  MavelAppUITests.swift
 //  MavelAppUITests
@@ -29,8 +30,7 @@ class MavelAppUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
     
 }

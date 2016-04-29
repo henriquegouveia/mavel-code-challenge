@@ -27,7 +27,8 @@ extension CharactersClientType {
     
     func listResources(path: String, completion: CharactersClientResult -> Void) -> Request {
         let route = Router.ListResources(path)
-        return sendRequestWithRoute(route, rootKey: "data", completion: completion)
+        let request = sendRequestWithRoute(route, rootKey: "data", completion: completion)
+        return request
     }
     
     func listCharactersWhichNamesStartsWith(name: String, completion: CharactersClientResult -> Void) -> Request {
@@ -72,6 +73,7 @@ private enum Router: HTTPRouteConvertible {
             return route
         
         case .ListResources(let path):
+            let path = path.stringByReplacingOccurrencesOfString("http://gateway.marvel.com", withString: "")
             let route = HTTPRoute(path: path,
                                   params: MarvelAPIQueryParameters.defaultParameters,
                                   method: .GET,
