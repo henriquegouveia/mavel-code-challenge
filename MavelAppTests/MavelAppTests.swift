@@ -29,6 +29,10 @@ class MavelAppTests: XCTestCase {
         client.listCharacters { charactersCollection in
             result = charactersCollection
         }
+        
+        expect(result).toEventuallyNot(beNil())
+        expect(result.value).toEventuallyNot(beNil())
+        expect(result.value?.characters?.count).toEventually(equal(20))
     }
 }
 

@@ -20,3 +20,14 @@ extension SeriesCollection: Decodable {
             <^> json <||? "items"
     }
 }
+
+extension SeriesCollection: ItemsCollectionProtocol {
+    var collectionName: String {
+        return "SERIES"
+    }
+    
+    var collection: [Item]? {
+        return self.items
+    }
+    
+}

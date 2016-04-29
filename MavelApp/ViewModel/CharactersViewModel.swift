@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-typealias CharactersResultWithSuccess = () -> Void
+typealias CharactersResultWithSuccess = ([NSIndexPath]) -> Void
 typealias CharactersResultWithFailure = (message: String) -> Void
 
 class CharactersViewModel {
@@ -22,27 +22,31 @@ class CharactersViewModel {
     
     private func configureOffset(total: Int?) -> [NSIndexPath] {
         
-        let newRows = (self.offset...self.limit)
+        let newRows = (self.offset..<self.limit)
         
         self.offset += self.limit
         if let total = total {
             self.total = total
         }
         
-        return newRows.map { NSIndexPath(forRow: $0, inSection: 1) }
+        return newRows.map { NSIndexPath(forRow: $0, inSection: 0) }
     }
     
     func getCharactersList(completionWithSuccess: CharactersResultWithSuccess, completionWithFailure: CharactersResultWithFailure) {
         self.client.listCharacters(self.limit, offset: self.offset) { result in
             switch result {
             case .Success(let result):
-                self.configureOffset(result.total)
+                let newRows = self.configureOffset(result.total)
                 self.dataSource.appendCharacters(result.characters)
-                completionWithSuccess()
+                completionWithSuccess(newRows)
             case .Failure(let error):
                 completionWithFailure(message: error.description)
             }
         }
+    }
+    
+    func characterByIndexPath(indexPath: NSIndexPath) -> Character? {
+        return self.dataSource.characterByIndexPath(indexPath)
     }
 }
 
@@ -50,8 +54,8 @@ class CharactersViewModel {
 
 extension CharactersViewModel: ViewModelDataSourceProtocol {
     
-    func numberOfRows() -> Int {
-        return dataSource.numberOfRows()
+    func numberOfRows(inSection: Int) -> Int {
+        return dataSource.numberOfRows(inSection)
     }
     
     func numberOfSections() -> Int {

@@ -10,12 +10,29 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
-    private let client: CharactersClientType = CharactersClient()
+    private var mediator: MediatorType = CharactersMediator()
+    private var customView: MainView {
+        return self.view as! MainView
+    }
     
     override func viewDidAppear(animated: Bool) {
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.mediator.prepareForSegue(segue, sender: self)
+    }
+}
+
+extension MainViewController: CharactersTableViewControllerProtocol {
+    func failToGetList() {
+        self.customView.errorMode()
+    }
+    
+    func listLoaded() {
+        self.customView.successMode()
     }
 }

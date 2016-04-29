@@ -18,6 +18,10 @@ class CharactersDataSource: NSObject {
             self.characters.appendContentsOf(characters)
         }
     }
+    
+    func characterByIndexPath(indexPath: NSIndexPath) -> Character {
+        return self.characters[indexPath.item]
+    }
 }
 
 extension CharactersDataSource: ViewModelDataSourceProtocol {
@@ -31,7 +35,7 @@ extension CharactersDataSource: ViewModelDataSourceProtocol {
         return cell
     }
     
-    func numberOfRows() -> Int {
+    func numberOfRows(inSection: Int) -> Int {
         return characters.count
     }
     

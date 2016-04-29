@@ -26,3 +26,13 @@ extension UITableView {
         return reusableCell
     }
 }
+
+extension UICollectionView {
+    func dequeueReusableCollectionCell <T: UICollectionViewCell> (metadata metadata: ReusableViewMetadata,
+                                        forIndexPath indexPath: NSIndexPath) -> T {
+        guard let reusableCell = dequeueReusableCellWithReuseIdentifier(metadata.reuseIdentifier, forIndexPath: indexPath) as? T else {
+            return T()
+        }
+        return reusableCell
+    }
+}

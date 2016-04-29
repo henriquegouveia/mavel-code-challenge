@@ -18,7 +18,7 @@ extension HTTPRouteConvertible {
         #if APP_STORE
             return "https://..."
         #else
-            return "http://gateway.marvel.com/v1/public"
+            return "http://gateway.marvel.com"
         #endif
 
     }

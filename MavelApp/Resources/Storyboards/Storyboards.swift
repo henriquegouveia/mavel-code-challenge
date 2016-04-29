@@ -73,6 +73,18 @@ struct Storyboards {
         static func instantiateCharactersTableViewController() -> CharactersTableViewController {
             return self.storyboard.instantiateViewControllerWithIdentifier("CharactersTableViewController") as! CharactersTableViewController
         }
+
+        static func instantiateCharacterDetailViewController() -> CharacterDetailViewController {
+            return self.storyboard.instantiateViewControllerWithIdentifier("CharacterDetailViewController") as! CharacterDetailViewController
+        }
+
+        static func instantiateItemsTableViewController() -> ItemsTableViewController {
+            return self.storyboard.instantiateViewControllerWithIdentifier("ItemsTableViewController") as! ItemsTableViewController
+        }
+
+        static func instantiateResourcesCollectionViewController() -> ResourcesCollectionViewController {
+            return self.storyboard.instantiateViewControllerWithIdentifier("ResourcesCollectionViewController") as! ResourcesCollectionViewController
+        }
     }
 }
 
@@ -235,18 +247,84 @@ extension UITableView {
 
 
 //MARK: - MainViewController
+extension UIStoryboardSegue {
+    func selection() -> MainViewController.Segue? {
+        if let identifier = self.identifier {
+            return MainViewController.Segue(rawValue: identifier)
+        }
+        return nil
+    }
+}
+
 extension MainViewController: IdentifiableProtocol { 
     var storyboardIdentifier: String? { return "MainViewController" }
     static var storyboardIdentifier: String? { return "MainViewController" }
 }
 
+extension MainViewController { 
+
+    enum Segue: String, CustomStringConvertible, SegueProtocol {
+        case embededCharactersListInMainView = "embededCharactersListInMainView"
+
+        var kind: SegueKind? {
+            switch (self) {
+            case embededCharactersListInMainView:
+                return SegueKind(rawValue: "embed")
+            }
+        }
+
+        var destination: UIViewController.Type? {
+            switch (self) {
+            case embededCharactersListInMainView:
+                return CharactersTableViewController.self
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
 
 //MARK: - CharactersTableViewController
+extension UIStoryboardSegue {
+    func selection() -> CharactersTableViewController.Segue? {
+        if let identifier = self.identifier {
+            return CharactersTableViewController.Segue(rawValue: identifier)
+        }
+        return nil
+    }
+}
+
 extension CharactersTableViewController: IdentifiableProtocol { 
     var storyboardIdentifier: String? { return "CharactersTableViewController" }
     static var storyboardIdentifier: String? { return "CharactersTableViewController" }
 }
 
+extension CharactersTableViewController { 
+
+    enum Segue: String, CustomStringConvertible, SegueProtocol {
+        case fromCharactersListToCharacterDetail = "fromCharactersListToCharacterDetail"
+
+        var kind: SegueKind? {
+            switch (self) {
+            case fromCharactersListToCharacterDetail:
+                return SegueKind(rawValue: "show")
+            }
+        }
+
+        var destination: UIViewController.Type? {
+            switch (self) {
+            case fromCharactersListToCharacterDetail:
+                return CharacterDetailViewController.self
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
 extension CharactersTableViewController { 
 
     enum Reusable: String, CustomStringConvertible, ReusableViewProtocol {
@@ -263,6 +341,110 @@ extension CharactersTableViewController {
             switch (self) {
             case CharacterTableViewCell_:
                 return CharacterTableViewCell.self
+            }
+        }
+
+        var storyboardIdentifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
+//MARK: - CharacterDetailViewController
+extension UIStoryboardSegue {
+    func selection() -> CharacterDetailViewController.Segue? {
+        if let identifier = self.identifier {
+            return CharacterDetailViewController.Segue(rawValue: identifier)
+        }
+        return nil
+    }
+}
+
+extension CharacterDetailViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "CharacterDetailViewController" }
+    static var storyboardIdentifier: String? { return "CharacterDetailViewController" }
+}
+
+extension CharacterDetailViewController { 
+
+    enum Segue: String, CustomStringConvertible, SegueProtocol {
+        case embededItemsListInCharacterDetail = "embededItemsListInCharacterDetail"
+
+        var kind: SegueKind? {
+            switch (self) {
+            case embededItemsListInCharacterDetail:
+                return SegueKind(rawValue: "embed")
+            }
+        }
+
+        var destination: UIViewController.Type? {
+            switch (self) {
+            case embededItemsListInCharacterDetail:
+                return ItemsTableViewController.self
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+//MARK: - ItemsTableViewController
+extension ItemsTableViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "ItemsTableViewController" }
+    static var storyboardIdentifier: String? { return "ItemsTableViewController" }
+}
+
+extension ItemsTableViewController { 
+
+    enum Reusable: String, CustomStringConvertible, ReusableViewProtocol {
+        case ItemTableViewCell_ = "ItemTableViewCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case ItemTableViewCell_:
+                return ReusableKind(rawValue: "tableViewCell")
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case ItemTableViewCell_:
+                return ItemTableViewCell.self
+            }
+        }
+
+        var storyboardIdentifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
+//MARK: - ResourcesCollectionViewController
+extension ResourcesCollectionViewController: IdentifiableProtocol { 
+    var storyboardIdentifier: String? { return "ResourcesCollectionViewController" }
+    static var storyboardIdentifier: String? { return "ResourcesCollectionViewController" }
+}
+
+extension ResourcesCollectionViewController { 
+
+    enum Reusable: String, CustomStringConvertible, ReusableViewProtocol {
+        case ResourceCollectionViewCell_ = "ResourceCollectionViewCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case ResourceCollectionViewCell_:
+                return ReusableKind(rawValue: "collectionViewCell")
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case ResourceCollectionViewCell_:
+                return ResourceCollectionViewCell.self
             }
         }
 

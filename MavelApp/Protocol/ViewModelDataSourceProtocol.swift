@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 
 protocol ViewModelDataSourceProtocol {
-    func numberOfRows() -> Int
+    func numberOfRows(inSection: Int) -> Int
     func numberOfSections() -> Int
     func cellForRowAtIndexPath(tableView: UITableView, atIndexPath: NSIndexPath) -> UITableViewCell
+    func cellForRowAtIndexPath(collectionView: UICollectionView, atIndexPath: NSIndexPath) -> UICollectionViewCell
+}
+
+extension ViewModelDataSourceProtocol {
+    func cellForRowAtIndexPath(tableView: UITableView, atIndexPath: NSIndexPath) -> UITableViewCell { return UITableViewCell() }
+    func cellForRowAtIndexPath(collectionView: UICollectionView, atIndexPath: NSIndexPath) -> UICollectionViewCell { return UICollectionViewCell() }
 }

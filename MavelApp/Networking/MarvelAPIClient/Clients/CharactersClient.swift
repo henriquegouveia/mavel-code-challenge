@@ -15,11 +15,17 @@ typealias CharactersClientResult = Result<CharactersCollection, MarvelAPIClientE
 
 protocol CharactersClientType: MarvelAPIClientType {
     func listCharacters(limit: Int, offset: Int, completion: CharactersClientResult -> Void) -> Request
+    func listResources(path: String, completion: CharactersClientResult -> Void) -> Request
 }
 
 extension CharactersClientType {
     func listCharacters(limit: Int, offset: Int, completion: CharactersClientResult -> Void) -> Request {
-        let route = Router.List(limit: limit, offset: offset)
+        let route = Router.ListCharacters(limit: limit, offset: offset)
+        return sendRequestWithRoute(route, rootKey: "data", completion: completion)
+    }
+    
+    func listResources(path: String, completion: CharactersClientResult -> Void) -> Request {
+        let route = Router.ListResources(path)
         return sendRequestWithRoute(route, rootKey: "data", completion: completion)
     }
 }
@@ -37,21 +43,25 @@ class CharactersClient: CharactersClientType {
 }
 
 private enum Router: HTTPRouteConvertible {
-    case List(limit: Int, offset: Int)
+    case ListCharacters(limit: Int, offset: Int)
+    case ListResources(String)
     
     var route: HTTPRoute {
         switch self {
-        case .List(let limit, let offset):
+        case .ListCharacters(let limit, let offset):
             let parameters = ["limit": limit,
                               "offset": offset]
-            let route = HTTPRoute(path: "/characters",
+            let route = HTTPRoute(path: "/v1/public/characters",
                                   params: MarvelAPIQueryParameters.appendQueryParameters(parameters),
                              method: .GET, encoding: .URL)
             return route
+            
+        case .ListResources(let path):
+            let route = HTTPRoute(path: path,
+                                  params: MarvelAPIQueryParameters.defaultParameters,
+                                  method: .GET,
+                                  encoding: .URL)
+            return route
         }
-    }
-    
-    private func path(path: String) -> String {
-        return "\(path)apikey=ced6478555e77e191db956de203d45f7&hash=1def7d9f6225ce1683a329c2da36bc59&ts=1461709250"
     }
 }

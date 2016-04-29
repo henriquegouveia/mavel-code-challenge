@@ -20,3 +20,13 @@ extension ComicsCollection: Decodable {
             <^> json <||? "items"
     }
 }
+
+extension ComicsCollection: ItemsCollectionProtocol {
+    var collectionName: String {
+        return "COMICS"
+    }
+    
+    var collection: [Item]? {
+        return self.items
+    }
+}

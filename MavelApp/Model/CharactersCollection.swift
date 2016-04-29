@@ -18,7 +18,6 @@ struct CharactersCollection {
 
 extension CharactersCollection: Decodable {
     static func decode(json: JSON) -> Decoded<CharactersCollection> {
-        print(json)
         return curry(CharactersCollection.init)
             <^> json <||? "results"
             <*> json <|? "total"

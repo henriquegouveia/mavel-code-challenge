@@ -10,7 +10,7 @@ import Foundation
 import Argo
 import Curry
 
-struct Character {
+class Character {
     var id: Int?
     var name: String?
     var sinopse: String?
@@ -18,11 +18,20 @@ struct Character {
     var comicsCollection: ComicsCollection?
     var seriesCollection: SeriesCollection?
     var eventsCollection: EventsCollection?
+    
+    init(id: Int?, name: String?, sinopse: String?, thumbnail: Thumbnail?, comics: ComicsCollection?, series: SeriesCollection?, events: EventsCollection?) {
+        self.id = id
+        self.name = name
+        self.sinopse = sinopse
+        self.thumbnail = thumbnail
+        self.comicsCollection = comics
+        self.seriesCollection = series
+        self.eventsCollection = events
+    }
 }
 
 extension Character: Decodable {
     static func decode(json: JSON) -> Decoded<Character> {
-        print(json)
         return curry(Character.init)
             <^> json <|? "id"
             <*> json <|? "name"

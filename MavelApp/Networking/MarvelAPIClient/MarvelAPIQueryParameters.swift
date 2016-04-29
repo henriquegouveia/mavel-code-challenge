@@ -11,7 +11,7 @@ import Foundation
 class MarvelAPIQueryParameters {
     private static let publicKey = "ced6478555e77e191db956de203d45f7"
     private static let privateKey = "f5bd0cba653ada8af1f4c2431e076ec1092f5140"
-    private static var queryParameters: [String: AnyObject] {
+    static var defaultParameters: [String: AnyObject] {
         let timestamp = Int(NSDate().timeIntervalSince1970)
         return ["apikey": publicKey,
                 "hash": createHash(withTimestamp: timestamp),
@@ -23,7 +23,7 @@ class MarvelAPIQueryParameters {
     }
     
     static func appendQueryParameters(params: [String: AnyObject]) -> [String: AnyObject] {
-        var parameters = queryParameters
+        var parameters = defaultParameters
         for key in params.keys {
             parameters[key] = params[key]
         }
