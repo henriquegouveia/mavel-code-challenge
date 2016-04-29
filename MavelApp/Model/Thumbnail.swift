@@ -13,6 +13,15 @@ import Curry
 struct Thumbnail {
     var path: String?
     var fileType: String?
+    var imageURL: NSURL {
+        if let path = self.path, fileType = self.fileType {
+            if let url = NSURL(string: "\(path).\(fileType)") {
+                return url
+            }
+        }
+        
+        return NSURL(string: "http://nemanjakovacevic.net/wp-content/uploads/2013/07/placeholder.png")!
+    }
 }
 
 extension Thumbnail: Decodable {

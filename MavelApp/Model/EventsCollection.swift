@@ -20,3 +20,13 @@ extension EventsCollection: Decodable {
             <^> json <||? "items"
     }
 }
+
+extension EventsCollection: ItemsCollectionProtocol {
+    var collectionName: String {
+        return "EVENTS"
+    }
+    
+    var collection: [Item]? {
+        return self.items
+    }
+}

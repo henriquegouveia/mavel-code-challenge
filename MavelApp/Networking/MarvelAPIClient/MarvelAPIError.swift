@@ -11,17 +11,17 @@ import Argo
 import Curry
 
 enum MarvelAPIServerErrorCode: Int, CustomStringConvertible {
-    case InvalidToken = 401
-    case ProfileNotFound = 402
-    case InterestNotFound = 403
-    case LocationNotFound = 404
+    case InvalidRefererOrHash = 401
+    case Forbidden = 403
+    case MethodNotAllowed = 405
+    case MissingParams = 409
     
     var description: String {
         switch self {
-        case .InvalidToken: return "\(rawValue) (InvalidToken)"
-        case .ProfileNotFound: return "\(rawValue) (ProfileNotFound)"
-        case .InterestNotFound: return "\(rawValue) (InterestNotFound)"
-        case .LocationNotFound: return "\(rawValue) (LocationNotFound)"
+        case .InvalidRefererOrHash: return "\(rawValue) (InvalidRefererOrHash)"
+        case .Forbidden: return "\(rawValue) (Forbidden)"
+        case .MethodNotAllowed: return "\(rawValue) (MethodNotAllowed)"
+        case .MissingParams: return "\(rawValue) (MissingParams)"
         }
     }
 }
@@ -65,9 +65,5 @@ struct MarvelAPIServerError: CustomErrorConvertible {
 
 struct ServerErrorJSONSchema {
     let codeKey = "code"
-    let httpStatusKey = "httpStatus"
-    let timestampKey = "timestamp"
-    let refKey = "ref"
-    let developerMessageKey = "developerMessage"
-    let stackTraceKey = "stackTrace"
+    let message = "status"
 }

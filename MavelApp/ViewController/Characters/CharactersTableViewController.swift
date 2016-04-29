@@ -9,14 +9,30 @@
 import Foundation
 import UIKit
 
-class CharactersTableViewController: UITableViewController {
+protocol CharactersTableViewControllerProtocol: class {
+    func listLoaded()
+    func failToGetList()
+    func startingLoadMore()
+}
+
+class CharactersTableViewController: UITableViewController, MediatorProtocol {
     private let viewModel = CharactersViewModel()
+    weak var delegate: CharactersTableViewControllerProtocol?
+    
+    var mediator: MediatorType? = CharactersMediator()
     
     override func viewDidLoad() {
-        self.viewModel.getCharactersList({ 
-            self.tableView.reloadData()
-            }) { (message) in
-                print(message)
+        self.getMoreData()
+    }
+    
+    private func getMoreData() {
+        self.viewModel.getCharactersList({ newRows in
+            self.insertRowsAtIndexPaths(newRows)
+            self.delegate?.listLoaded()
+        }) { (message) in
+            if self.viewModel.theresAnyContentToBeShown {
+                self.delegate?.failToGetList()
+            }
         }
     }
     
@@ -25,6 +41,10 @@ class CharactersTableViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Bottom)
         self.tableView.endUpdates()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.mediator?.prepareForSegue(segue, sender: sender)
+    }
 }
 
 //MARK: DataSource Implementation
@@ -32,7 +52,7 @@ class CharactersTableViewController: UITableViewController {
 extension CharactersTableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 120.0
+        return 128.0
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +60,7 @@ extension CharactersTableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfRows()
+        return self.viewModel.numberOfRows(section)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,10 +68,23 @@ extension CharactersTableViewController {
     }
 }
 
+//MARK: Delegate Implementation
+
+extension CharactersTableViewController {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let character = self.viewModel.characterByIndexPath(indexPath)
+        self.performSegueWithIdentifier("fromCharactersListToCharacterDetail", sender: character)
+    }
+}
+
 //MARK: UIScrollViewDelegate
 
 extension CharactersTableViewController {
-    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print(targetContentOffset.memory.y)
+    override func scrollViewWillEndDragging(scrollView: UIScrollView,
+                                            withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if targetContentOffset.memory.y > 1900 {
+            self.delegate?.startingLoadMore()
+            self.getMoreData()
+        }
     }
 }
