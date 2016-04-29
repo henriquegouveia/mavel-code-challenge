@@ -20,6 +20,23 @@ class ItemsTableViewController: UITableViewController {
     func buildItemsToBeShown() {
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        //TODO: It must be in a view layer
+        let superview = self.view.superview
+        let views = ["view": self.view]
+        let height = self.tableView.contentSize.height
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[view(==\(height))]",
+                                                                                 options: NSLayoutFormatOptions(rawValue: 0),
+                                                                                 metrics: nil,
+                                                                                 views: views)
+        let horizontalConstaints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|",
+                                                                                  options: NSLayoutFormatOptions(rawValue: 0),
+                                                                                  metrics: nil,
+                                                                                  views: views)
+        superview?.addConstraints(verticalConstraints)
+        superview?.addConstraints(horizontalConstaints)
+    }
 }
 
 //MARK: DataSource Implementation

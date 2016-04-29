@@ -30,7 +30,7 @@ class ItemTableViewCell: UITableViewCell {
                                                                                  options: NSLayoutFormatOptions(rawValue: 0),
                                                                                  metrics: nil,
                                                                                  views: views)
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[resourceView]|",
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[resourceView]-50-|",
                                                                                    options: NSLayoutFormatOptions(rawValue: 0),
                                                                                    metrics: nil,
                                                                                    views: views)
@@ -42,14 +42,11 @@ class ItemTableViewCell: UITableViewCell {
         self.collectionNameLabel.text = resource.collectionName
         self.instantiateResourcesCollectionView(resource)
         self.collectionContainer.addSubview(self.resourcesViewController!.view)
-        
-        self.addConstraintToResourceViewController(self.resourcesViewController!.view)
-        self.collectionContainer.layoutIfNeeded()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.resourcesViewController?.view.frame = self.collectionContainer.frame
+        self.addConstraintToResourceViewController(self.resourcesViewController!.view)
     }
 }
 

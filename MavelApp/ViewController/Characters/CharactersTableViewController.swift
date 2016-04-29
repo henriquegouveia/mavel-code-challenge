@@ -12,6 +12,7 @@ import UIKit
 protocol CharactersTableViewControllerProtocol: class {
     func listLoaded()
     func failToGetList()
+    func startingLoadMore()
 }
 
 class CharactersTableViewController: UITableViewController, MediatorProtocol {
@@ -29,8 +30,9 @@ class CharactersTableViewController: UITableViewController, MediatorProtocol {
             self.insertRowsAtIndexPaths(newRows)
             self.delegate?.listLoaded()
         }) { (message) in
-            print(message)
-            self.delegate?.failToGetList()
+            if self.viewModel.theresAnyContentToBeShown {
+                self.delegate?.failToGetList()
+            }
         }
     }
     
@@ -80,8 +82,9 @@ extension CharactersTableViewController {
 extension CharactersTableViewController {
     override func scrollViewWillEndDragging(scrollView: UIScrollView,
                                             withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print(targetContentOffset.memory.y)
+        if targetContentOffset.memory.y > 1900 {
+            self.delegate?.startingLoadMore()
+            self.getMoreData()
+        }
     }
-    
-    scro
 }

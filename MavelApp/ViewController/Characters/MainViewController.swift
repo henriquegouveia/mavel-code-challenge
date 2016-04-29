@@ -35,4 +35,8 @@ extension MainViewController: CharactersTableViewControllerProtocol {
     func listLoaded() {
         self.customView.successMode()
     }
+    
+    func startingLoadMore() {
+        print("loading more")
+    }
 }
