@@ -21,6 +21,10 @@ class ResourceCollectionViewCell: UICollectionViewCell {
     func setupCell(viewModel: ResourceViewModel) {
         self.viewModel = viewModel
         self.itemNameLabel.text = self.viewModel!.name
+        self.itemImageView.image = nil
+        self.viewModel?.getImageURLForItem({ url in
+            self.itemImageView.nk_setImageWith(url)
+        })
     }
 }
 

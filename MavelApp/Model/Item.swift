@@ -14,6 +14,7 @@ struct Item {
     var resourceURI: String?
     var name: String?
     var type: String?
+    var thumbnail: Thumbnail?
 }
 
 extension Item: Decodable {
@@ -22,5 +23,6 @@ extension Item: Decodable {
             <^> json <|? "resourceURI"
             <*> json <|? "name"
             <*> json <|? "type"
+            <*> json <|? "thumbnail"
     }
 }
