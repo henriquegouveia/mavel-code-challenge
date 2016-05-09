@@ -1132,15 +1132,15 @@
                                         <exclude reference="xEZ-yA-Rh9"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="3HN-Xp-5jh"/>
-                                        <exclude reference="S9e-k8-1Ly"/>
-                                        <exclude reference="z1Q-Ti-z0N"/>
                                         <exclude reference="hmY-I2-Jhi"/>
                                         <exclude reference="vu9-Tj-AmT"/>
                                         <exclude reference="Jxb-cE-jUa"/>
                                         <exclude reference="Rcq-29-e3H"/>
                                         <exclude reference="U8A-mZ-o4p"/>
                                         <exclude reference="aZC-z0-4gw"/>
+                                        <exclude reference="3HN-Xp-5jh"/>
+                                        <exclude reference="S9e-k8-1Ly"/>
+                                        <exclude reference="z1Q-Ti-z0N"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1150,15 +1150,15 @@
                                         <include reference="xEZ-yA-Rh9"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="3HN-Xp-5jh"/>
-                                        <include reference="S9e-k8-1Ly"/>
-                                        <include reference="z1Q-Ti-z0N"/>
                                         <include reference="hmY-I2-Jhi"/>
                                         <include reference="vu9-Tj-AmT"/>
                                         <include reference="Jxb-cE-jUa"/>
                                         <include reference="Rcq-29-e3H"/>
                                         <include reference="U8A-mZ-o4p"/>
                                         <include reference="aZC-z0-4gw"/>
+                                        <include reference="3HN-Xp-5jh"/>
+                                        <include reference="S9e-k8-1Ly"/>
+                                        <include reference="z1Q-Ti-z0N"/>
                                     </mask>
                                 </variation>
                                 <connections>
